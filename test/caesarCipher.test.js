@@ -1,21 +1,21 @@
-import caesarCipher from '../src/caesarCipher'
+import caesarCipher from '../src/caesarCipher';
 
 test('wrapping from z to a', () => {
-    const result = caesarCipher.encrypt('zzz', 1);
-    expect(result).toBe('aaa');
+  const result = caesarCipher.encrypt('zzz', 1);
+  expect(result).toBe('aaa');
 });
 
 test('keeping the same case', () => {
-    const result = caesarCipher.encrypt('CcCc', 2);
-    expect(result).toBe('EeEe');
+  const result = caesarCipher.encrypt('CcCc', 2);
+  expect(result).toBe('EeEe');
 });
 
 test('encrypting punctuation', () => {
-    const result = caesarCipher.encrypt(',-/',2)
-    expect(result).toBe('./1')
+  const result = caesarCipher.encrypt(',-/', 2);
+  expect(result).toBe('./1');
 });
 
 test('encrypting a sentence', () => {
-    const result = caesarCipher.encrypt('attack at dawn', 5);
-    expect(result).toBe('fyyfhp?fy?ifbs');
+  const result = caesarCipher.encrypt('attack at dawn', 5);
+  expect(result).toBe('fyyfhp?fy?ifbs');
 });
